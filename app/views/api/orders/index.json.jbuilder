@@ -1,9 +1,9 @@
-@orders.each do |order|
-  json.set! order.id do
-    json.extract! order, :id, :status
-    json.products order.order_items do |item|
-      json.extract! item.product, :id, :name
-      json.extract! item, :number_purchased
-    end
+json.array! @orders do |order|
+  json.order_id order.id
+  json.status order.status
+  json.products order.order_items do |item|
+    json.product_id item.product.id
+    json.product_name item.product.name
+    json.extract! item, :number_purchased
   end
 end

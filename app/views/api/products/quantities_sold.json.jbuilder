@@ -3,5 +3,7 @@ json.end_date @end_date
 json.interval @interval
 json.set! "total_#{@interval}s", @total_time
 json.products @products do |product|
-  json.extract! product, :id, :name, :quantity
+  json.product_id product.id
+  json.product_name product.name
+  json.extract! product, :quantity
 end

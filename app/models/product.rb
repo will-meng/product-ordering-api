@@ -14,9 +14,9 @@ class Product < ApplicationRecord
     total_time = 
       case interval
       when 'month'
-        num_days * 365 / 12
+        num_days / (365 / 12)
       when 'week'
-        num_days * 7
+        num_days / 7
       when 'day'
         num_days
       end
@@ -41,7 +41,7 @@ class Product < ApplicationRecord
       csv << ['interval', interval]
       csv << ["total_#{interval}s", total_time]
 
-      csv << attributes
+      csv << %w[product_id product_name quantity]
 
       products.each do |product|
         csv << attributes.map { |attr| product.send(attr) }

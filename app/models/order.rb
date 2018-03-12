@@ -1,6 +1,6 @@
 class Order < ApplicationRecord
   validates :status, presence: true, 
-    inclusion: { in: ['waiting for delivery', "on it's way", 'delivered'] }
+    inclusion: { in: ['waiting for delivery', "on its way", 'delivered'] }
 
   belongs_to :customer
   has_many :order_items, dependent: :destroy
