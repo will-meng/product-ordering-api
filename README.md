@@ -207,7 +207,7 @@ Sample response:
 ## Directions (heroku server)
 If you do not wish to install Rails v5.1 and/or PostgresQL, you may connect to the API endpoints by replacing
 
-"https://product-ordering.herokuapp.com" above with "https://product-ordering.herokuapp.com"
+"http://localhost:3000" above with "https://product-ordering.herokuapp.com"
 
 #### 1. Number of items purchased by Customer and Category
 
